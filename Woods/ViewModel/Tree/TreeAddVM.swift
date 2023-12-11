@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 class TreeAddVM: ObservableObject {
     
@@ -16,8 +17,7 @@ class TreeAddVM: ObservableObject {
     
     @Published var name = ""
     @Published var isFavorite = false
-    
-    
+    @Published var treeImage: UIImage?
     
     // MARK: - Computed Properties
     
@@ -36,7 +36,9 @@ class TreeAddVM: ObservableObject {
         tree.id = UUID()
         tree.name = name
         tree.isFavorite = isFavorite
-       
+        if let image = treeImage, let imageData = image.jpegData(compressionQuality: 1.0) {
+                    tree.image = imageData
+                }
         container.save()
     }
     
