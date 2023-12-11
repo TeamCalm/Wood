@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class TreeDetailVM: ObservableObject {
+class TreeAddVM: ObservableObject {
     
     // MARK: Variables
     

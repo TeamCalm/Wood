@@ -2,59 +2,33 @@
 //  TreeDetailView.swift
 //  Woods
 //
-//  Created by Johannes Ahlborn on 10.12.23.
+//  Created by Johannes Ahlborn on 11.12.23.
 //
 
 import SwiftUI
-import CoreData
 
 struct TreeDetailView: View {
+    @ObservedObject var viewModel: TreeVM
     
     var body: some View {
-           NavigationStack {
-               Form {
-                   Section {
-                       TextField("Name", text: $treeDetailVM.name)
-                           .keyboardType(.numberPad)
-                   }
-
-                   Section {
-                       Toggle("Favorit", isOn: $treeDetailVM.isFavorite)
-                   }
-
-                   Button(action: saveTree) {
-                       Text("Speichern")
-                   }
-                   .disabled(!treeDetailVM.enableSaving)
-               }
-               .navigationTitle("Neuer Baum")
-           }
-       }
-            
-            
-            
-            // MARK: - Variables
-            
-            @StateObject private var treeDetailVM = TreeDetailVM()
-            
-            @Binding var isPresented: Bool
-            
-            
-            
-            // MARK: - Functions
-            
-            private func saveTree() {
-                treeDetailVM.createTree()
-                isPresented.toggle()
-            }
-            
+        VStack {
+            Text("Tree Detail: \(viewModel.name)")
+            Text("Favorite: \(viewModel.isFavorite.description)")
         }
-        
-        struct TreeDetailView_Previews: PreviewProvider {
-            static var previews: some View {
-                TreeDetailView(isPresented: .constant(false))
-            }
+        .padding()
+        .navigationTitle(viewModel.name)
+    }
+    
+    struct TreeDetailView_Previews: PreviewProvider {
+        static var previews: some View {
+            let sampleTree = Tree(context: PersistentStore.shared.context)
+            sampleTree.name = "Sample Tree"
+            sampleTree.isFavorite = true
+            
+            let viewModel = TreeVM(tree: sampleTree)
+            
+            return TreeDetailView(viewModel: viewModel)
+                .environment(\.managedObjectContext, PersistentStore.shared.context)
         }
-    
-    
-
+    }
+}

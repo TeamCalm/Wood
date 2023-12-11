@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class TreeVM: ObservableObject, Identifiable {
     
@@ -21,7 +22,7 @@ class TreeVM: ObservableObject, Identifiable {
     
     
     // MARK: Variables
-    
+    @Published var treeVMs: [TreeVM] = []
     let container = PersistentStore.shared
     
     let tree: Tree
@@ -31,6 +32,18 @@ class TreeVM: ObservableObject, Identifiable {
     
     // MARK: Functions
     
+    private func fetchTrees() {
+        let request = NSFetchRequest<Tree>(entityName: "Tree")
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        
+        do {
+            let trees = try container.context.fetch(request)
+            treeVMs = trees.map { TreeVM(tree: $0) }
+        } catch {
+            print("error fetching: \(error)")
+        }
+    }
+    
     func favoriteTree() {
         tree.isFavorite.toggle()
         container.save()
@@ -38,7 +51,20 @@ class TreeVM: ObservableObject, Identifiable {
     
     func deleteTree() {
         container.context.delete(tree)
+        saveAndFetch()
+    }
+    func saveTree(name: String, isFavorite: Bool) {
+        let tree = Tree(context: container.context)
+        tree.id = UUID()
+        tree.name = name
+        tree.isFavorite = isFavorite
+        
+        
+    }
+    
+    func saveAndFetch() {
         container.save()
+        fetchTrees()
     }
     
 }

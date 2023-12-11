@@ -13,11 +13,14 @@
 		423C756E2B258FCB0013EC04 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C756D2B258FCB0013EC04 /* PersistentStore.swift */; };
 		423C75712B258FE90013EC04 /* Enties.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 423C756F2B258FE90013EC04 /* Enties.xcdatamodeld */; };
 		423C75752B2590570013EC04 /* TreeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C75742B2590570013EC04 /* TreeVM.swift */; };
-		423C75782B25908D0013EC04 /* TreeDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C75772B25908D0013EC04 /* TreeDetailVM.swift */; };
+		423C75782B25908D0013EC04 /* TreeAddVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C75772B25908D0013EC04 /* TreeAddVM.swift */; };
 		423C757E2B2590F50013EC04 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C757D2B2590F50013EC04 /* TreeView.swift */; };
-		423C75802B2591020013EC04 /* TreeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C757F2B2591020013EC04 /* TreeDetailView.swift */; };
+		423C75802B2591020013EC04 /* TreeAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C757F2B2591020013EC04 /* TreeAddView.swift */; };
 		423C75822B2591110013EC04 /* TreeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C75812B2591110013EC04 /* TreeListView.swift */; };
 		423C75842B2595FA0013EC04 /* TreesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C75832B2595FA0013EC04 /* TreesVM.swift */; };
+		4267C3632B26BCD800B7DFB2 /* NavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C3622B26BCD800B7DFB2 /* NavigatorView.swift */; };
+		4267C3662B26BCF400B7DFB2 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C3652B26BCF400B7DFB2 /* Tab.swift */; };
+		4267C3682B26C56900B7DFB2 /* TreeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C3672B26C56900B7DFB2 /* TreeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,11 +31,14 @@
 		423C756D2B258FCB0013EC04 /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		423C75702B258FE90013EC04 /* Enties.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Enties.xcdatamodel; sourceTree = "<group>"; };
 		423C75742B2590570013EC04 /* TreeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeVM.swift; sourceTree = "<group>"; };
-		423C75772B25908D0013EC04 /* TreeDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDetailVM.swift; sourceTree = "<group>"; };
+		423C75772B25908D0013EC04 /* TreeAddVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeAddVM.swift; sourceTree = "<group>"; };
 		423C757D2B2590F50013EC04 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
-		423C757F2B2591020013EC04 /* TreeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDetailView.swift; sourceTree = "<group>"; };
+		423C757F2B2591020013EC04 /* TreeAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeAddView.swift; sourceTree = "<group>"; };
 		423C75812B2591110013EC04 /* TreeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeListView.swift; sourceTree = "<group>"; };
 		423C75832B2595FA0013EC04 /* TreesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesVM.swift; sourceTree = "<group>"; };
+		4267C3622B26BCD800B7DFB2 /* NavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorView.swift; sourceTree = "<group>"; };
+		4267C3652B26BCF400B7DFB2 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		4267C3672B26C56900B7DFB2 /* TreeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 		423C755D2B257BBF0013EC04 /* Woods */ = {
 			isa = PBXGroup;
 			children = (
+				4267C3612B26BCC700B7DFB2 /* Navigation */,
 				423C75792B2590B70013EC04 /* View */,
 				423C75722B2590230013EC04 /* ViewModel */,
 				423C756C2B258FB60013EC04 /* CoreData */,
@@ -105,6 +112,7 @@
 			children = (
 				423C75742B2590570013EC04 /* TreeVM.swift */,
 				423C75832B2595FA0013EC04 /* TreesVM.swift */,
+				423C75772B25908D0013EC04 /* TreeAddVM.swift */,
 				423C75762B25906B0013EC04 /* Details */,
 			);
 			path = Tree;
@@ -113,7 +121,6 @@
 		423C75762B25906B0013EC04 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				423C75772B25908D0013EC04 /* TreeDetailVM.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				423C757D2B2590F50013EC04 /* TreeView.swift */,
+				423C757F2B2591020013EC04 /* TreeAddView.swift */,
 				423C757C2B2590DE0013EC04 /* Detail */,
 				423C757B2B2590D80013EC04 /* List */,
 			);
@@ -147,9 +155,26 @@
 		423C757C2B2590DE0013EC04 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				423C757F2B2591020013EC04 /* TreeDetailView.swift */,
+				4267C3672B26C56900B7DFB2 /* TreeDetailView.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		4267C3612B26BCC700B7DFB2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4267C3622B26BCD800B7DFB2 /* NavigatorView.swift */,
+				4267C3642B26BCE200B7DFB2 /* TabEnum */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		4267C3642B26BCE200B7DFB2 /* TabEnum */ = {
+			isa = PBXGroup;
+			children = (
+				4267C3652B26BCF400B7DFB2 /* Tab.swift */,
+			);
+			path = TabEnum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,13 +247,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				423C75782B25908D0013EC04 /* TreeDetailVM.swift in Sources */,
+				4267C3632B26BCD800B7DFB2 /* NavigatorView.swift in Sources */,
+				423C75782B25908D0013EC04 /* TreeAddVM.swift in Sources */,
 				423C755F2B257BBF0013EC04 /* WoodsApp.swift in Sources */,
 				423C75752B2590570013EC04 /* TreeVM.swift in Sources */,
 				423C75822B2591110013EC04 /* TreeListView.swift in Sources */,
+				4267C3662B26BCF400B7DFB2 /* Tab.swift in Sources */,
 				423C756E2B258FCB0013EC04 /* PersistentStore.swift in Sources */,
-				423C75802B2591020013EC04 /* TreeDetailView.swift in Sources */,
+				423C75802B2591020013EC04 /* TreeAddView.swift in Sources */,
 				423C757E2B2590F50013EC04 /* TreeView.swift in Sources */,
+				4267C3682B26C56900B7DFB2 /* TreeDetailView.swift in Sources */,
 				423C75842B2595FA0013EC04 /* TreesVM.swift in Sources */,
 				423C75712B258FE90013EC04 /* Enties.xcdatamodeld in Sources */,
 			);
