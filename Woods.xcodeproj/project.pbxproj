@@ -21,6 +21,7 @@
 		4267C3632B26BCD800B7DFB2 /* NavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C3622B26BCD800B7DFB2 /* NavigatorView.swift */; };
 		4267C3662B26BCF400B7DFB2 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C3652B26BCF400B7DFB2 /* Tab.swift */; };
 		4267C3682B26C56900B7DFB2 /* TreeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C3672B26C56900B7DFB2 /* TreeDetailView.swift */; };
+		4267C36A2B26CA9F00B7DFB2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C3692B26CA9F00B7DFB2 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		4267C3622B26BCD800B7DFB2 /* NavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorView.swift; sourceTree = "<group>"; };
 		4267C3652B26BCF400B7DFB2 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		4267C3672B26C56900B7DFB2 /* TreeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDetailView.swift; sourceTree = "<group>"; };
+		4267C3692B26CA9F00B7DFB2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				423C755E2B257BBF0013EC04 /* WoodsApp.swift */,
 				423C75622B257BC00013EC04 /* Assets.xcassets */,
 				423C75642B257BC00013EC04 /* Preview Content */,
+				4267C3692B26CA9F00B7DFB2 /* ImagePicker.swift */,
 			);
 			path = Woods;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4267C36A2B26CA9F00B7DFB2 /* ImagePicker.swift in Sources */,
 				4267C3632B26BCD800B7DFB2 /* NavigatorView.swift in Sources */,
 				423C75782B25908D0013EC04 /* TreeAddVM.swift in Sources */,
 				423C755F2B257BBF0013EC04 /* WoodsApp.swift in Sources */,

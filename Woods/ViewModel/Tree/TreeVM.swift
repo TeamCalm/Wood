@@ -58,7 +58,7 @@ class TreeVM: ObservableObject, Identifiable {
         tree.id = UUID()
         tree.name = name
         tree.isFavorite = isFavorite
-        
+        saveAndFetch()
         
     }
     

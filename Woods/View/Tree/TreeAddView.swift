@@ -21,6 +21,16 @@ struct TreeAddView: View {
                    Section {
                        Toggle("Favorit", isOn: $treeAddVM.isFavorite)
                    }
+                   Section{
+                       Button("photo"){
+                           showingImagePicker = true
+                       }
+                       if let treeImage = treeImage{
+                           Image(uiImage: treeImage)
+                               .resizable()
+                               .scaledToFit()
+                       }
+                   }
 
                    Button(action: saveTree) {
                        Text("Speichern")
@@ -29,15 +39,19 @@ struct TreeAddView: View {
                }
                .navigationTitle("Neuer Baum")
            }
+           .sheet(isPresented: $showingImagePicker) {
+               ImagePicker(image: $treeImage)
+           }
        }
             
             
             
             // MARK: - Variables
             
-            @StateObject private var treeAddVM = TreeAddVM()
-            
-            @Binding var isPresented: Bool
+    @StateObject private var treeAddVM = TreeAddVM()
+    @State private var showingImagePicker = false
+    @State private var treeImage: UIImage?
+    @Binding var isPresented: Bool
             
             
             
@@ -50,7 +64,7 @@ struct TreeAddView: View {
             
         }
         
-        struct TreeDetailView_Previews: PreviewProvider {
+        struct TreeAddView_Previews: PreviewProvider {
             static var previews: some View {
                 TreeAddView(isPresented: .constant(false))
             }
