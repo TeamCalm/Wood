@@ -12,13 +12,21 @@ struct TreeDetailView: View {
     
     var body: some View {
         VStack {
+                   if let treeImage = viewModel.treeImage {
+                       Image(uiImage: treeImage)
+                           .resizable()
+                           .scaledToFit()
+                           .frame(maxWidth: .infinity, maxHeight: 200)
+                           .cornerRadius(10)
+                           .padding(.bottom, 10)
+                   }
             Text("Tree Detail: \(viewModel.name)")
             Text("Favorite: \(viewModel.isFavorite.description)")
         }
         .padding()
         .navigationTitle(viewModel.name)
     }
-    
+}
     struct TreeDetailView_Previews: PreviewProvider {
         static var previews: some View {
             let sampleTree = Tree(context: PersistentStore.shared.context)
@@ -31,4 +39,4 @@ struct TreeDetailView: View {
                 .environment(\.managedObjectContext, PersistentStore.shared.context)
         }
     }
-}
+

@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 class TreeVM: ObservableObject, Identifiable {
     
@@ -16,7 +17,10 @@ class TreeVM: ObservableObject, Identifiable {
         self.id = tree.id ?? UUID()
         self.name = tree.name ?? ""
         self.isFavorite = tree.isFavorite
-    
+        if let imageData = tree.image {
+            self.treeImage = UIImage(data: imageData)
+        }
+        
     }
     
     
@@ -24,6 +28,7 @@ class TreeVM: ObservableObject, Identifiable {
     // MARK: Variables
     @Published var treeVMs: [TreeVM] = []
     let container = PersistentStore.shared
+    @Published var treeImage: UIImage?
     
     let tree: Tree
     let id: UUID
@@ -53,14 +58,19 @@ class TreeVM: ObservableObject, Identifiable {
         container.context.delete(tree)
         saveAndFetch()
     }
-    func saveTree(name: String, isFavorite: Bool) {
+    func saveTree(name: String, isFavorite: Bool, image: UIImage?) {
         let tree = Tree(context: container.context)
         tree.id = UUID()
         tree.name = name
         tree.isFavorite = isFavorite
-        saveAndFetch()
         
+        if let image = image, let imageData = image.jpegData(compressionQuality: 1.0) {
+            tree.image = imageData
+        }
+        
+        saveAndFetch()
     }
+    
     
     func saveAndFetch() {
         container.save()

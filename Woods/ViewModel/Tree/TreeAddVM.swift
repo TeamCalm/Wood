@@ -29,6 +29,8 @@ class TreeAddVM: ObservableObject {
     
     // MARK: Functions
     
+    
+    
     func createTree() {
         let tree = Tree(context: container.context)
         tree.id = UUID()
